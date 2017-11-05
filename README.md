@@ -21,3 +21,9 @@ The tiles below the chart show the total energy production for today, yesterday,
 ### Installation
 
 Please see this FAQ in the SmartThings Community for instructions on how to install the device handler to your ST account.
+
+If you have not already done so, set up an account with the Solar Edge monitoring portal, have your installer or the very helpful Solar Edge team add your Site, Inverter (Serial number) and Panel configuration to their portal. Then request an API code and your site Id.
+
+In the settings of the Solar Edge App, you need to add the Site Id, The API code and the update frequency in minutes, typically 20.
+
+<B>Note:</B> When defining the update frequency, be very aware that there is a limit of 300 requests per day to the Solar Edge Portal, per site. So, define 20 minutes or more for the update frequency, or you will exhaust your daily quota.
