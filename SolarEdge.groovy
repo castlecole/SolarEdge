@@ -252,13 +252,8 @@ metadata {
 			decoration: "flat",
 			width: 2,
 			height: 2) {
-
-				state("default",
-
-					action:"polling.poll",
-
+				state("default", action:"polling.poll",
 					icon: "https://raw.githubusercontent.com/castlecole/customdevices/master/refresh.png")
-
 		}
 
 		htmlTile(name:"graphHTML", action: "getGraphHTML",
