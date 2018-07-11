@@ -322,9 +322,24 @@ def startPoll() {
 
 
 def pullData() {
+
 	log.debug "Requesting latest data from SolarEdge…"
-	def cmd = "https://monitoringapi.solaredge.com/site/${settings.confSiteID}/overview?api_key=${settings.confApiKey}"
-	httpGet(cmd) {resp ->
+
+	def cmd = [uri: "https://monitoringapi.solaredge.com/site/${settings.confSiteID}/overview?api_key=${settings.confApiKey}"]
+	
+	try {
+    	
+	// New Json call to replace original httpGet call.
+	httpPostJson(cmd) { resp ->
+
+//		resp.headers.each {
+//            	    log.debug "${it.name} : ${it.value}"
+//        	}
+//        	log.debug "response contentType: ${resp.contentType}"
+//    		}
+	
+//	def cmd = "https://monitoringapi.solaredge.com/site/${settings.confSiteID}/overview?api_key=${settings.confApiKey}"
+//	httpGet(cmd) {resp ->
 		def data = resp.data
 		if (data == state.lastData) 
 			log.debug "No new data"
@@ -450,6 +465,11 @@ def pullData() {
 			sendEvent(it)
 		}
 	}
+
+	} catch (e) {
+    		log.debug "Something went badly wrong: $e"
+	}
+
 }
 
 String getDataString(Integer seriesIndex) {
