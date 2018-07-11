@@ -330,7 +330,7 @@ def pullData() {
 	try {
     	
 	// New Json call to replace original httpGet call.
-	httpPostJson(cmd) { resp ->
+	httpPut(cmd) { resp ->
 
 //		resp.headers.each {
 //            	    log.debug "${it.name} : ${it.value}"
