@@ -4,6 +4,7 @@ This is a SmartThings device type handler (henceforth 'DTH') for the Solar Edge 
 
 Huge thanks to Andreas Amann, who did the initial work on this. I have left his name in the source, as my changes are more cosmetic.
 
+NB: THIS HAS STOPPED WORKING SINCE A SMARTTHINGS HUB UPDATE.... WORKING ON SOLUTION... JSON FORMAT RELATED ISSUE.
 
 ### Requirements
 
