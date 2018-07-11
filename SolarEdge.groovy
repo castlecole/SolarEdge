@@ -329,8 +329,8 @@ def pullData() {
 	
 	try {
     	
-	// New Json call to replace original httpGet call.
-	httpPut(cmd) { resp ->
+	log.debug "Cmd Request: ${cmd}"
+	httpGet(cmd) { resp ->
 
 //		resp.headers.each {
 //            	    log.debug "${it.name} : ${it.value}"
@@ -340,6 +340,7 @@ def pullData() {
 	
 //	def cmd = "https://monitoringapi.solaredge.com/site/${settings.confSiteID}/overview?api_key=${settings.confApiKey}"
 //	httpGet(cmd) {resp ->
+		log.debug "RAW RESPONSE: ${resp}"
 		def data = resp.data
 		if (data == state.lastData) 
 			log.debug "No new data"
