@@ -446,7 +446,7 @@ def pullData() {
 						energyData += newValues
 					}
 					 energyData.reverse().drop(1).each() {
-						energyTable.add([it.date.format("H", location.timeZone),it.date.format("m", location.timeZone),it.floatValue]
+						energyTable.add([it.date.format("H", location.timeZone),it.date.format("m", location.timeZone),it.floatValue])
 					}
 				}
 			}
@@ -464,7 +464,6 @@ def pullData() {
 		events.each() {
 			sendEvent(it)
 		}
-	}
 
 	} catch (e) {
     		log.debug "Something went badly wrong: $e"
