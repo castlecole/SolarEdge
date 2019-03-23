@@ -259,9 +259,9 @@ def pullData() {
 		}
 		def events = []
 		events << createEvent(name: 'power_details', value: ("(" + String.format("%+,d", powerChange.toInteger()) + "W) — Today's Peak: " + String.format("%,d", state.peakpower.toInteger()) + "W (" + String.format("%.1f", state.peakpercentage) + "%)"), displayed: false)
-		events << createEvent(name: 'energy_lastMonth', value: String.format("%,#.3f", energyLastMonth) + "kWh", displayed: false)
-		events << createEvent(name: 'energy_lastYear', value: String.format("%,#.3f", energyLastYear) + "MWh", displayed: false)
-		events << createEvent(name: 'energy_life', value: String.format("%,#.3f", energyLife) + "MWh", displayed: false)
+		events << createEvent(name: 'energy_lastMonth', value: String.format("%,#.3f", energyLastMonth) + " kWh", displayed: false)
+		events << createEvent(name: 'energy_lastYear', value: String.format("%,#.3f", energyLastYear) + " MWh", displayed: false)
+		events << createEvent(name: 'energy_life', value: String.format("%,#.3f", energyLife) + " MWh", displayed: false)
 		def efficiencyToday = (1000*energyToday/settings.confSystemSize).toFloat()
 		events << createEvent(name: 'efficiency', value: String.format("%#.3f", efficiencyToday) + "\nkWh/kW", displayed: false)
 		def efficiencyLastMonth = (1000/todayDay.toInteger()*energyLastMonth/settings.confSystemSize).toFloat()
@@ -269,7 +269,7 @@ def pullData() {
 		def dayInYear = new Date().format("D", location.timeZone).toInteger()
 		def efficiencyLastYear = (1000000/dayInYear*energyLastYear/settings.confSystemSize).toFloat()
 		events << createEvent(name: 'efficiency_lastYear', value: String.format("%#.3f", efficiencyLastYear) + "\nkWh/kW", displayed: false)
-		events << createEvent(name: 'energy_str', value: String.format("%,#.3f", energyToday) + "kWh", displayed: false)
+		events << createEvent(name: 'energy_str', value: String.format("%,#.3f", energyToday) + " kWh", displayed: false)
 		events << createEvent(name: 'energy', value: energyToday, unit: "kWh", descriptionText: "Energy is " + String.format("%,#.3f", energyToday) + "kWh\n(Efficiency: " + String.format("%#.3f", efficiencyToday) + "kWh/kW)")
 		events << createEvent(name: 'power', value: currentPower, unit: "W", descriptionText: "Power is " + String.format("%,d", currentPower.toInteger()) + "W (" + String.format("%#.1f", 100*currentPower/settings.confSystemSize) + "%)\n(" + String.format("%+,d", powerChange.toInteger()) + "W since last reading)")
 		// get power data for yesterday and today so we can create a graph
