@@ -461,7 +461,7 @@ def getGraphHTML() {
 					</script>
 				</head>
 				<body>
-					<div style="font:arial;text-align:center;border:1px solid black">Solar Output Today</div>
+					<div style="font:arial;font-size: 15px;text-align:center">Solar Output - Last 24 Hours</div>
 					<div id="chart_div" style="border:1px solid black"></div>
 
 				</body>
