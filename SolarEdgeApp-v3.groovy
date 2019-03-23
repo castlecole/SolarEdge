@@ -1,1 +1,0 @@
-// SolarEdge Smartthings Application
