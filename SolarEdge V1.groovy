@@ -29,7 +29,7 @@ preferences {
 }
 
 metadata {
-	definition (name: "SolarEdge", namespace: "castlecole", author: "Andreas Amann") {
+	definition (name: "SolarEdge V1", namespace: "castlecole", author: "Andreas Amann") {
 		capability "Sensor"
 		capability "Power Meter"
 		capability "Energy Meter"
