@@ -400,7 +400,7 @@ def getGraphHTML() {
 					<meta http-equiv="pragma" content="no-cache"/>
 					<meta name="viewport" content="width = device-width">
 					<meta name="viewport" content="initial-scale = 1.0, user-scalable=no">
-					<style type="text/css">body,div {margin:0;padding:0}</style>
+					<style type="text/css">body,div {margin:1;padding:0}</style>
 					<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 					<script type="text/javascript">
 						google.charts.load('current', {packages: ['corechart']});
@@ -420,7 +420,7 @@ def getGraphHTML() {
 							]);
 							var options = {
 								fontName: 'San Francisco, Roboto, Arial',
-								height: 280,
+								height: 275,
 								hAxis: {
 									format: 'H:mm',
 									minValue: [${getStartTime()},0,0],
