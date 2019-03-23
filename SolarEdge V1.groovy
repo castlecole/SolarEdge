@@ -81,10 +81,10 @@ metadata {
 					backgroundColors: [[value: 0, color: "#bc2323"],
 							   [value: 2500, color: "#1e9cbb"],
 							   [value: 4000, color: "#90d2a7"]])
-		}
-		tileAttribute("device.power_details", key: "SECONDARY_CONTROL") {
-			attributeState("power_details", label: '${currentValue}')
-		}
+			}
+			tileAttribute("device.power_details", key: "SECONDARY_CONTROL") {
+				attributeState("power_details", label: '${currentValue}')
+			}
 		}
 
 	standardTile("today", "today", width: 2, height: 2) {
@@ -104,7 +104,7 @@ metadata {
 						[value: 6, color: "#44b621"]])
 	}
 		
-	standardTile("yesterday", "yesterday", width: 2, height: 2) 
+	standardTile("yesterday", "yesterday", width: 2, height: 2) {
 		state("default", icon:"https://raw.githubusercontent.com/castlecole/customdevices/master/time_yesterday2.png", label:"YESTERDAY")
 	}
 		
@@ -138,7 +138,7 @@ metadata {
 						[value: 6, color: "#44b621"]])
 	}
 
-	standardTile("lastYear", "lastYear", width: 2, height: 2) 
+	standardTile("lastYear", "lastYear", width: 2, height: 2) {
 		state("default", icon:"https://raw.githubusercontent.com/castlecole/customdevices/master/time_year2.png", label:"THIS YEAR")
 	}
 
