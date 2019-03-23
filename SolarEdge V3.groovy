@@ -420,7 +420,7 @@ def getGraphHTML() {
 							]);
 							var options = {
 								fontName: 'San Francisco, Roboto, Arial',
-								height: 260,
+								height: 280,
 								hAxis: {
 									format: 'H:mm',
 									minValue: [${getStartTime()},0,0],
